@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+</style>
+{% block title %}
+<title>Shopy | Profile</title>
+<style>
+    h5 {
+        margin-bottom: 0px;
+    }
+
+    .nav-m a {
+        background-color: rgb(190, 132, 32);
+    }
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card ">
+            <div class="bg-dark card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-m">
+                        <h5><a class="nav-link text-dark active" href="#productinfo" data-bs-toggle="tab">Products</a>
+                        </h5>
+                    </li>
+                    <li class="nav-m">
+                        <h5><a class="nav-link mx-2 text-dark" href="#userinfo" data-bs-toggle="tab">User Details</a>
+                        </h5>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="productinfo">
+                        product info
+                    </div>
+                    <div class="tab-pane fade" id="userinfo">
+                        <div class="container-fluid">
+                            <table class="table table-light table-striped table-hover">
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{data.name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>{{data.email}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Username</th>
+                                    <td>{{data.username}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <td>{{data.phone}}</td>
+                                </tr>
+                                <tr>
+                                    <th>City</th>
+                                    <td>{{data.city}}</td>
+                                </tr>
+                                <tr>
+                                    <th>State</th>
+                                    <td>{{data.state}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Pin</th>
+                                    <td>{{data.pin}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <a href="/update/" class="btn btn-primary">Update Profile</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
